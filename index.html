@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>久留米高専formsジェネレーター</title>
+  </head>
+  <body>
+    <h1>久留米高専formsジェネレーター</h1>
+    <div id="main">
+      <h3>久留米高専の安否確認formsのアレ</h3>
+      <input id="input"/>
+      <div id="generate"><button onclick="generate()">生成☆</button></div>
+      <textarea id="textarea" width="500" readonly></textarea>
+      <div id="generate"><button onclick="copy()">コピー</button></div>
+    </div>
+    <script>
+      function generate(){
+	let input=document.getElementById("input");
+	let textarea=document.getElementById("textarea");
+	textarea.value=`♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬\n\n${input.value}\n\n♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬`;
+      }
+      function copy(){
+	let target=document.getElementById("textarea");
+	target.select();
+	document.execCommand("Copy");
+      }
+    </script>
+<style>
+  #generate{
+    width:100%;
+    text-align:center;
+  }
+  #generate > button{
+    margin-top:12px;
+    margin-bottom:24px;
+    background:white;
+    font-size:30px;
+    border-radius:20px;
+  }
+  #generate > button:active{
+    margin-top:12px;
+    margin-bottom:24px;
+    background:gray;
+    font-size:30px;
+    border-radius:20px;
+  }
+  textarea{
+    font-size:20px;
+    width:320;
+    height:200;
+  }
+  h1{
+    text-align:center;
+  }
+  #main{
+    position:absolute;
+    transform:translate(-50%,-50%);
+    left:50%;
+    top:40%;
+  }
+  #input{
+    font-size:30px;
+  }
+</style>
+  </body>
+</html>
+
